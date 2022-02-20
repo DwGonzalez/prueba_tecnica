@@ -1,5 +1,12 @@
 <div class="row mt-5">
-    <div class="col-xs-12 col-sm-6 col-md-4 mb-3" *ngFor="let car of carList">
+    <div class="input-group">
+        <span class="input-group-text" id="basic-addon1">Buscar</span>
+        <input type="text" class="form-control" placeholder="Introducir texto" aria-label="Username"
+            [(ngModel)]="termino">
+    </div>
+</div>
+<div class="row mt-4">
+    <div class="col-xs-12 col-sm-6 col-md-4 mb-3" *ngFor='let car of carList | filter:termino'>
         <div class="card">
             <div class="image">
                 <a [routerLink]="['/car-details', car.id]">

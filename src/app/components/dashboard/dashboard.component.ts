@@ -10,6 +10,7 @@ import { CarService } from 'src/app/services/car.service';
 export class DashboardComponent implements OnInit {
 
   carList: Car[] = [];
+  termino: string = "";
 
   constructor(private _carService: CarService) { }
 
