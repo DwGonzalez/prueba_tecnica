@@ -17,6 +17,6 @@ export class CarService {
   }
 
   getCarDetails(id: number) {
-    return this.http.get<Car[]>(`${this.apiBaseURL}/<car_id>`)
+    return this.http.get<Car>(`${this.apiBaseURL}/<car_id>`);
   }
 }

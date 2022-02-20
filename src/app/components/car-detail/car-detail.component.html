@@ -1,1 +1,29 @@
-<p>car-detail works!</p>
+<button class="btn btn-dark mt-5" [routerLink]="['/']">
+    Volver
+</button>
+
+<div class="row justify-content-center">
+    <div class="col-xs-12 col-sm-6 col-md-6 justify-content-center" *ngIf="car$">
+        <div class="card">
+            <div class="image">
+                <span>
+                    <img [src]="car$.img_url" [alt]="car$.model" class="card-img-top" />
+                </span>
+            </div>
+            <div class="card-inner">
+                <div class="header">
+                    <b>Marca:</b>
+                    <h2 class="text-muted">{{car$.make | uppercase}}</h2>
+                    <b>Modelo:</b>
+                    <h2 class="text-muted">{{car$.model}}</h2>
+                    <b>Precio:</b>
+                    <h3 class="text-muted">{{car$.price | currency}}</h3>
+                    <b>Año:</b>
+                    <h3 class="text-muted"> {{car$.year}}</h3>
+                    <b>Caballos de Fuerza:</b>
+                    <h3 class="text-muted">{{car$.horsepower}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
