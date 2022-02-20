@@ -6,7 +6,8 @@
     </div>
 </div>
 <div class="row mt-4">
-    <div class="col-xs-12 col-sm-6 col-md-4 mb-3" *ngFor='let car of carList | filter:termino'>
+    <div class="col-xs-12 col-sm-6 col-md-4 mb-3"
+        *ngFor='let car of carList | filter:termino | paginate: { itemsPerPage: 9, currentPage: pageNumber }'>
         <div class="card">
             <div class="image">
                 <a [routerLink]="['/car-details', car.id]">
@@ -24,6 +25,7 @@
             </div>
         </div>
     </div>
+    <pagination-controls class="d-flex justify-content-center" (pageChange)="pageNumber = $event"></pagination-controls>
     <div class="col-xs-12 col-sm-12 col-md-12 mt-5 container-notFound" *ngIf="carList.length <= 0">
         <p>No hay resultados........</p>
     </div>

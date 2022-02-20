@@ -11,6 +11,7 @@ export class DashboardComponent implements OnInit {
 
   carList: Car[] = [];
   termino: string = "";
+  pageNumber = 1;
 
   constructor(private _carService: CarService) { }
 
